@@ -108,9 +108,8 @@ class BlogPostTest extends TestCase
     {
         $post = $this->makePost();
         $tag  = BlogTag::create([
-            'name'      => ['az' => 'Laravel', 'en' => 'Laravel', 'ru' => 'Laravel'],
-            'slug'      => 'laravel',
-            'is_active' => true,
+            'name' => 'Laravel',
+            'slug' => 'laravel',
         ]);
 
         $post->tags()->attach($tag->id);
@@ -122,8 +121,8 @@ class BlogPostTest extends TestCase
     public function test_can_attach_multiple_tags(): void
     {
         $post = $this->makePost();
-        $tag1 = BlogTag::create(['name' => ['az' => 'Tag1', 'en' => 'Tag1', 'ru' => 'Tag1'], 'slug' => 'tag1', 'is_active' => true]);
-        $tag2 = BlogTag::create(['name' => ['az' => 'Tag2', 'en' => 'Tag2', 'ru' => 'Tag2'], 'slug' => 'tag2', 'is_active' => true]);
+        $tag1 = BlogTag::create(['name' => 'Tag1', 'slug' => 'tag1']);
+        $tag2 = BlogTag::create(['name' => 'Tag2', 'slug' => 'tag2']);
 
         $post->tags()->attach([$tag1->id, $tag2->id]);
 
@@ -139,7 +138,7 @@ class BlogPostTest extends TestCase
         }
     }
 
-    public function test_get_translation_returns_empty_string_for_missing_locale(): void
+    public function test_get_translation_falls_back_to_available_locale(): void
     {
         $post = BlogPost::create([
             'title'     => ['az' => 'Yalnız AZ'],
@@ -147,6 +146,19 @@ class BlogPostTest extends TestCase
             'is_active' => true,
         ]);
 
-        $this->assertEquals('', $post->getTranslation('title', 'en'));
+        // spatie falls back to the first available translation
+        $this->assertEquals('Yalnız AZ', $post->getTranslation('title', 'en'));
+    }
+
+    public function test_get_translation_returns_empty_when_no_fallback(): void
+    {
+        $post = BlogPost::create([
+            'title'     => ['az' => 'Yalnız AZ'],
+            'slug'      => ['az' => 'yalniz-az2', 'en' => 'yalniz-az2', 'ru' => 'yalniz-az2'],
+            'is_active' => true,
+        ]);
+
+        // passing useFallbackLocale: false returns empty string
+        $this->assertEquals('', $post->getTranslation('title', 'en', false));
     }
 }

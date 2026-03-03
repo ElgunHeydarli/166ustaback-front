@@ -4002,13 +4002,13 @@ footer {
     }
     .service-steps {
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 60px 30px;
       margin-top: 80px;
 
       .step-item {
-        width: 45%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -4068,11 +4068,20 @@ footer {
             }
           }
         }
-        &:nth-child(odd) {
-          margin-left: auto;
-        }
-        &:nth-child(even) {
-          margin-top: -85px;
+      }
+      /* Zigzag layout when steps have images */
+      &:has(.step-image) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .step-item {
+          width: 45%;
+          &:nth-child(odd) {
+            margin-left: auto;
+          }
+          &:nth-child(even) {
+            margin-top: -85px;
+          }
         }
       }
     }
@@ -5341,9 +5350,9 @@ footer {
               }
             }
           }
-          &:nth-child(even) {
-            margin-top: -90px;
-          }
+        }
+        &:has(.step-image) .step-item:nth-child(even) {
+          margin-top: -90px;
         }
       }
     }
@@ -5574,6 +5583,18 @@ footer {
           }
           &:nth-child(even) {
             margin-top: 0;
+          }
+        }
+        &:has(.step-image) {
+          display: grid;
+          .step-item {
+            width: 100%;
+            &:nth-child(odd) {
+              margin-left: 0;
+            }
+            &:nth-child(even) {
+              margin-top: 0;
+            }
           }
         }
       }

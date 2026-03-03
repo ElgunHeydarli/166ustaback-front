@@ -417,7 +417,7 @@
             '@type'    => 'LocalBusiness',
             '@id'      => url('/'),
             'name'     => \App\Models\Setting::get('site_name', '166 Usta'),
-            'url'      => url('/az'),
+            'url'      => url($locale),
         ];
         if ($_t = \App\Models\Setting::get('phone'))   $_ld['telephone'] = $_t;
         if ($_e = \App\Models\Setting::get('email'))   $_ld['email']     = $_e;
@@ -446,12 +446,12 @@
             '@context'        => 'https://schema.org',
             '@type'           => 'WebSite',
             'name'            => \App\Models\Setting::get('site_name', '166 Usta'),
-            'url'             => url('/az'),
+            'url'             => url($locale),
             'potentialAction' => [
                 '@type'       => 'SearchAction',
                 'target'      => [
                     '@type'       => 'EntryPoint',
-                    'urlTemplate' => url('/az/bloq') . '?search={search_term_string}',
+                    'urlTemplate' => route('blog.index', $locale) . '?search={search_term_string}',
                 ],
                 'query-input' => 'required name=search_term_string',
             ],

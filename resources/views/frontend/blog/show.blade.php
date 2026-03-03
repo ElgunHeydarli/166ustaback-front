@@ -131,7 +131,7 @@
         'dateModified'  => $post->updated_at->toIso8601String(),
         'url'           => url()->current(),
         'inLanguage'    => $locale,
-        'publisher'     => ['@type' => 'Organization', 'name' => \App\Models\Setting::get('site_name', '166 Usta'), 'url' => url('/az')],
+        'publisher'     => ['@type' => 'Organization', 'name' => \App\Models\Setting::get('site_name', '166 Usta'), 'url' => url($locale)],
     ];
     if ($post->cover_image) $_articleLD['image'] = ['@type' => 'ImageObject', 'url' => \Illuminate\Support\Facades\Storage::url($post->cover_image)];
     $_breadcrumbLD = [

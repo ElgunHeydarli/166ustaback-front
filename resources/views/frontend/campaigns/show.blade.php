@@ -108,7 +108,7 @@ document.querySelector('.copyUrl')?.addEventListener('click', function() {
         'description' => Str::limit(strip_tags($campaign->getTranslation('short_description', $locale) ?? ''), 160),
         'url'         => url()->current(),
         'inLanguage'  => $locale,
-        'seller'      => ['@type' => 'Organization', 'name' => \App\Models\Setting::get('site_name', '166 Usta'), 'url' => url('/az')],
+        'seller'      => ['@type' => 'Organization', 'name' => \App\Models\Setting::get('site_name', '166 Usta'), 'url' => url($locale)],
     ];
     if ($campaign->cover_image) $_campaignLD['image'] = ['@type' => 'ImageObject', 'url' => \Illuminate\Support\Facades\Storage::url($campaign->cover_image)];
     $_breadcrumbLD = [

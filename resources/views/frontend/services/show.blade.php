@@ -168,7 +168,7 @@ new Swiper('.service-detail-image-slide', {
         '@type'       => 'Service',
         'name'        => $service->getTranslation('title', $locale),
         'description' => Str::limit(strip_tags($service->getTranslation('short_description', $locale) ?? ''), 160),
-        'provider'    => ['@type' => 'LocalBusiness', 'name' => \App\Models\Setting::get('site_name', '166 Usta'), 'url' => url('/az')],
+        'provider'    => ['@type' => 'LocalBusiness', 'name' => \App\Models\Setting::get('site_name', '166 Usta'), 'url' => url($locale)],
         'url'         => url()->current(),
         'inLanguage'  => $locale,
     ];

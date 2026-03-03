@@ -1,13 +1,13 @@
 @extends('frontend.layouts.app')
 
-@section('title', \App\Models\Setting::get('meta_title', '166 Usta') . ' — Qutular')
+@section('title', \App\Models\Setting::get('meta_title', '166 Usta') . ' — ' . __('nav.boxes'))
 @section('meta_description', \App\Models\Setting::get('meta_description', ''))
 
 @section('content')
 
 <section class="boxes-container p-lr">
     <div class="banner">
-        <h1 class="banner-title">Qutular</h1>
+        <h1 class="banner-title">{{ __('nav.boxes') }}</h1>
         <img src="{{ asset('frontend/images/headBanner.png') }}" alt="">
     </div>
 
@@ -30,14 +30,14 @@
                 @if($box->price)
                 <p class="box-price">{{ number_format($box->price, 0) }} ₼</p>
                 @endif
-                <span class="more">Ətraflı</span>
+                <span class="more">{{ __('general.details') }}</span>
             </div>
         </a>
         @endforeach
     </div>
     @else
     <div style="text-align:center;padding:80px 0;color:#999;">
-        <p style="font-size:1.1rem;">Hələ qutu yoxdur.</p>
+        <p style="font-size:1.1rem;">{{ __('general.no_boxes') }}</p>
     </div>
     @endif
 </section>

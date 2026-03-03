@@ -13,11 +13,11 @@
 
     {{-- Breadcrumb --}}
     <div class="breadCrumb">
-        <a href="{{ route('home', $locale) }}" class="breadCrumb-item">Ana səhifə</a>
+        <a href="{{ route('home', $locale) }}" class="breadCrumb-item">{{ __('nav.home') }}</a>
         <div class="icon">
             <img src="{{ asset('frontend/icons/arrowRightGrey.svg') }}" alt="">
         </div>
-        <a href="{{ route('portfolio.index', $locale) }}" class="breadCrumb-item">Portfolio</a>
+        <a href="{{ route('portfolio.index', $locale) }}" class="breadCrumb-item">{{ __('nav.portfolio') }}</a>
         <div class="icon">
             <img src="{{ asset('frontend/icons/arrowRightOrange2.svg') }}" alt="">
         </div>
@@ -37,12 +37,12 @@
             <div class="share">
                 <button class="share-btn" type="button">
                     <img src="{{ asset('frontend/icons/shareOrange.svg') }}" alt="">
-                    <p>Paylaş</p>
+                    <p>{{ __('general.share') }}</p>
                 </button>
                 <div class="shareList">
-                    <button class="shareItem copyUrl" onclick="navigator.clipboard.writeText(window.location.href).then(()=>alert('Link kopyalandı!'))">
+                    <button class="shareItem copyUrl" onclick="navigator.clipboard.writeText(window.location.href).then(()=>alert('{{ __('general.link_copied') }}'))">
                         <img src="{{ asset('frontend/icons/pin_colored.svg') }}" alt="">
-                        Linki kopyala
+                        {{ __('general.copy_link') }}
                     </button>
                     @php $shareUrl = urlencode(request()->url()); @endphp
                     <a href="https://wa.me/?text={{ $shareUrl }}" target="_blank" class="shareItem">
@@ -76,19 +76,19 @@
         <div class="short-info-box">
             @if($item->client)
             <div class="short-info-item">
-                <span>Müştəri:</span>
+                <span>{{ __('general.client') }}:</span>
                 <p>{{ $item->client }}</p>
             </div>
             @endif
             @if($item->duration)
             <div class="short-info-item">
-                <span>Müddət:</span>
+                <span>{{ __('general.duration') }}:</span>
                 <p>{{ $item->duration }}</p>
             </div>
             @endif
             @if($item->service)
             <div class="short-info-item">
-                <span>Kateqoriya:</span>
+                <span>{{ __('general.category') }}:</span>
                 <p>{{ $item->service->getTranslation('title', $locale) }}</p>
             </div>
             @endif
@@ -98,7 +98,7 @@
     {{-- Description --}}
     @if($item->getTranslation('content', $locale))
     <div class="portfolio-detail-description">
-        <h2 class="description-title">Ümumi məlumat</h2>
+        <h2 class="description-title">{{ __('general.general_info') }}</h2>
         <div class="description">
             {!! $item->getTranslation('content', $locale) !!}
         </div>
@@ -114,7 +114,7 @@
             <img src="{{ Storage::url($img) }}" alt="">
             @if($index === 3 && count($gallery) > 4)
             <div class="view-all">
-                <p>Hamısına bax</p>
+                <p>{{ __('general.view_all') }}</p>
                 <img src="{{ asset('frontend/icons/rightWhite.svg') }}" alt="">
             </div>
             @endif
@@ -169,8 +169,8 @@ document.querySelectorAll('.portfolio-gallery-item').forEach(function(el, index)
         '@context'        => 'https://schema.org',
         '@type'           => 'BreadcrumbList',
         'itemListElement' => [
-            ['@type' => 'ListItem', 'position' => 1, 'name' => 'Ana səhifə', 'item' => url($locale)],
-            ['@type' => 'ListItem', 'position' => 2, 'name' => 'Portfolio',  'item' => route('portfolio.index', $locale)],
+            ['@type' => 'ListItem', 'position' => 1, 'name' => __('nav.home'),      'item' => url($locale)],
+            ['@type' => 'ListItem', 'position' => 2, 'name' => __('nav.portfolio'), 'item' => route('portfolio.index', $locale)],
             ['@type' => 'ListItem', 'position' => 3, 'name' => $item->getTranslation('title', $locale), 'item' => url()->current()],
         ],
     ];

@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', __('Portfolio'))
+@section('title', \App\Models\Setting::get('meta_title', '166 Usta') . ' — ' . __('nav.portfolio'))
 
 @section('content')
 
@@ -8,7 +8,7 @@
 
     {{-- Banner --}}
     <div class="banner">
-        <h1 class="banner-title">Portfolio</h1>
+        <h1 class="banner-title">{{ __('nav.portfolio') }}</h1>
         <img src="{{ asset('frontend/images/headBanner.png') }}" alt="">
     </div>
 
@@ -34,7 +34,7 @@
             </div>
         </a>
         @empty
-        <p style="grid-column:1/-1;text-align:center;padding:40px 0;color:#999;">Portfolio tapılmadı.</p>
+        <p style="grid-column:1/-1;text-align:center;padding:40px 0;color:#999;">{{ __('general.no_portfolio') }}</p>
         @endforelse
     </div>
 

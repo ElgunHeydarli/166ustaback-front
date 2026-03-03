@@ -18,11 +18,11 @@
 <section class="blog-detail-container p-lr">
 
     <div class="breadCrumb">
-        <a href="{{ route('home', $locale) }}" class="breadCrumb-item">Ana səhifə</a>
+        <a href="{{ route('home', $locale) }}" class="breadCrumb-item">{{ __('nav.home') }}</a>
         <div class="icon">
             <img src="{{ asset('frontend/icons/arrowRightGrey.svg') }}" alt="">
         </div>
-        <a href="{{ route('blog.index', $locale) }}" class="breadCrumb-item">Bloq</a>
+        <a href="{{ route('blog.index', $locale) }}" class="breadCrumb-item">{{ __('nav.blog') }}</a>
         <div class="icon">
             <img src="{{ asset('frontend/icons/arrowRightOrange2.svg') }}" alt="">
         </div>
@@ -53,9 +53,9 @@
 
             {{-- Axtarış --}}
             <div class="blog-search">
-                <h2 class="blog-search-title">Axtarış</h2>
+                <h2 class="blog-search-title">{{ __('general.search') }}</h2>
                 <form action="{{ route('blog.index', $locale) }}" method="GET" class="blog-search-form">
-                    <input type="text" name="search" placeholder="Axtar">
+                    <input type="text" name="search" placeholder="{{ __('general.search_placeholder') }}">
                     <button class="searchBlogBtn" type="submit">
                         <img src="{{ asset('frontend/icons/searchOrange.svg') }}" alt="">
                     </button>
@@ -65,7 +65,7 @@
             {{-- Ən son bloqlar --}}
             @if($recentPosts->isNotEmpty())
             <div class="last-blog">
-                <h2 class="last-blog-title">Ən son bloqlar</h2>
+                <h2 class="last-blog-title">{{ __('general.recent_posts') }}</h2>
                 <div class="last-blog-items">
                     @foreach($recentPosts as $recent)
                     <a href="{{ route('blog.show', [$locale, $recent->getTranslation('slug', $locale)]) }}" class="blog-item">
@@ -89,7 +89,7 @@
             {{-- Taglar --}}
             @if($post->tags->isNotEmpty())
             <div class="blog-tags">
-                <h2 class="blog-tags-title">Taglar</h2>
+                <h2 class="blog-tags-title">{{ __('general.tags') }}</h2>
                 <div class="blog-tags-items">
                     @foreach($post->tags as $tag)
                     <a href="{{ route('blog.index', $locale) }}?tag={{ $tag->slug }}" class="tag-item">{{ $tag->name }}</a>
@@ -138,8 +138,8 @@
         '@context'        => 'https://schema.org',
         '@type'           => 'BreadcrumbList',
         'itemListElement' => [
-            ['@type' => 'ListItem', 'position' => 1, 'name' => 'Ana səhifə', 'item' => url($locale)],
-            ['@type' => 'ListItem', 'position' => 2, 'name' => 'Bloq',        'item' => route('blog.index', $locale)],
+            ['@type' => 'ListItem', 'position' => 1, 'name' => __('nav.home'), 'item' => url($locale)],
+            ['@type' => 'ListItem', 'position' => 2, 'name' => __('nav.blog'),  'item' => route('blog.index', $locale)],
             ['@type' => 'ListItem', 'position' => 3, 'name' => $post->getTranslation('title', $locale), 'item' => url()->current()],
         ],
     ];

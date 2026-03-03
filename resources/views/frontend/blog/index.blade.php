@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', \App\Models\Setting::get('meta_title', '166 Usta') . ' — Bloq')
+@section('title', \App\Models\Setting::get('meta_title', '166 Usta') . ' — ' . __('nav.blog'))
 @section('meta_description', \App\Models\Setting::get('meta_description', ''))
 
 @section('content')
@@ -31,7 +31,7 @@
                 @endif
                 <div class="card-body-bottom">
                     <div class="more">
-                        <p>Ətraflı</p>
+                        <p>{{ __('general.details') }}</p>
                         <img src="{{ asset('frontend/icons/arrowRightOrange.svg') }}" alt="">
                     </div>
                     <p class="share-date">{{ $post->published_at?->translatedFormat('d F Y') ?? $post->created_at->translatedFormat('d F Y') }}</p>
@@ -50,9 +50,9 @@
     @else
     <div style="text-align:center;padding:80px 0;color:#999;">
         @if($search)
-        <p style="font-size:1.1rem;">"{{ $search }}" üzrə nəticə tapılmadı.</p>
+        <p style="font-size:1.1rem;">{{ __('general.no_results', ['query' => $search]) }}</p>
         @else
-        <p style="font-size:1.1rem;">Hələ bloq yazısı yoxdur.</p>
+        <p style="font-size:1.1rem;">{{ __('general.no_posts') }}</p>
         @endif
     </div>
     @endif

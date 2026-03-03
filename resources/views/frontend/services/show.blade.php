@@ -14,11 +14,11 @@
 
     {{-- Breadcrumb --}}
     <div class="breadCrumb">
-        <a href="{{ route('home', $locale) }}" class="breadCrumb-item">Ana səhifə</a>
+        <a href="{{ route('home', $locale) }}" class="breadCrumb-item">{{ __('nav.home') }}</a>
         <div class="icon">
             <img src="{{ asset('frontend/icons/arrowRightGrey.svg') }}" alt="">
         </div>
-        <a href="{{ route('services.index', $locale) }}" class="breadCrumb-item">Usta xidmətləri</a>
+        <a href="{{ route('services.index', $locale) }}" class="breadCrumb-item">{{ __('nav.services') }}</a>
         <div class="icon">
             <img src="{{ asset('frontend/icons/arrowRightOrange2.svg') }}" alt="">
         </div>
@@ -56,19 +56,19 @@
             <h1 class="hero-title">{{ $service->getTranslation('title', $locale) }}</h1>
             <div class="hero-links">
                 <a href="{{ route('contact', $locale) }}" class="order-link">
-                    <p>Sifariş Et</p>
+                    <p>{{ __('general.order_now') }}</p>
                     <img src="{{ asset('frontend/icons/hammer.svg') }}" alt="">
                 </a>
                 @php $phone = \App\Models\Setting::get('phone', ''); @endphp
                 @if($phone)
                 <a href="tel:{{ $phone }}" class="contact-link">
-                    <p>Əlaqə saxla</p>
+                    <p>{{ __('general.contact_link') }}</p>
                     <img src="{{ asset('frontend/icons/phoneWhite.svg') }}" alt="">
                 </a>
                 @php $wp = \App\Models\Setting::get('whatsapp', $phone); @endphp
                 <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $wp) }}" target="_blank" class="wp">
                     <img src="{{ asset('frontend/icons/wp.svg') }}" alt="">
-                    <p>Whatsapp</p>
+                    <p>{{ __('general.whatsapp') }}</p>
                 </a>
                 @endif
             </div>
@@ -177,8 +177,8 @@ new Swiper('.service-detail-image-slide', {
         '@context'        => 'https://schema.org',
         '@type'           => 'BreadcrumbList',
         'itemListElement' => [
-            ['@type' => 'ListItem', 'position' => 1, 'name' => 'Ana səhifə',     'item' => url($locale)],
-            ['@type' => 'ListItem', 'position' => 2, 'name' => 'Usta xidmətləri','item' => route('services.index', $locale)],
+            ['@type' => 'ListItem', 'position' => 1, 'name' => __('nav.home'),     'item' => url($locale)],
+            ['@type' => 'ListItem', 'position' => 2, 'name' => __('nav.services'),'item' => route('services.index', $locale)],
             ['@type' => 'ListItem', 'position' => 3, 'name' => $service->getTranslation('title', $locale), 'item' => url()->current()],
         ],
     ];

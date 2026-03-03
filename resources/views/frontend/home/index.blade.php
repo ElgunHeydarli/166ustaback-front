@@ -46,7 +46,7 @@
                         <p class="hero-subtitle">{{ $slider->getTranslation('subtitle', $locale) }}</p>
                         @endif
                         <a href="{{ $slider->button_url ?: route('contact', $locale) }}" class="hero-link">
-                            <p>{{ $slider->getTranslation('button_text', $locale) ?: 'Sifariş Et' }}</p>
+                            <p>{{ $slider->getTranslation('button_text', $locale) ?: __('general.order_now') }}</p>
                             <img src="{{ asset('frontend/icons/hammer.svg') }}" alt="">
                         </a>
                     </div>
@@ -64,9 +64,9 @@
     <div class="home-hero-main">
         <img src="{{ asset('frontend/images/homeHero.png') }}" alt="" class="hero-image">
         <div class="home-hero-content">
-            <h1 class="hero-title">Eviniz üçün Peşəkar Usta Xidməti <span>166 usta</span></h1>
+            <h1 class="hero-title">{!! __('general.home_hero_fallback') !!}</h1>
             <a href="{{ route('contact', $locale) }}" class="hero-link">
-                <p>Sifariş Et</p>
+                <p>{{ __('general.order_now') }}</p>
                 <img src="{{ asset('frontend/icons/hammer.svg') }}" alt="">
             </a>
         </div>
@@ -107,7 +107,7 @@
             $aboutBtnUrl  = ($homeAbout && $homeAbout->button_url) ? $homeAbout->button_url : route('about', $locale);
         @endphp
         <a href="{{ $aboutBtnUrl }}" class="more">
-            <p>{{ $aboutBtnText ?: 'Ətraflı' }}</p>
+            <p>{{ $aboutBtnText ?: __('general.details') }}</p>
             <img src="{{ asset('frontend/icons/hammer.svg') }}" alt="">
         </a>
     </div>
@@ -141,10 +141,10 @@
         <div class="home-services-head">
             <div class="head-left">
                 <h2 class="small-title">{{ __('nav.services') }}</h2>
-                <h3 class="section-title">Usta xidmətləri</h3>
+                <h3 class="section-title">{{ __('general.home_services_title') }}</h3>
             </div>
             <a href="{{ route('services.index', $locale) }}" class="more">
-                Hamısına bax
+                {{ __('general.view_all') }}
                 <img src="{{ asset('frontend/icons/arrowRightOrange.svg') }}" alt="">
             </a>
         </div>
@@ -161,7 +161,7 @@
                     <p>{{ strip_tags($service->getTranslation('short_description', $locale)) }}</p>
                 </div>
                 <div class="more">
-                    <p>Ətraflı</p>
+                    <p>{{ __('general.details') }}</p>
                     <img src="{{ asset('frontend/icons/arrowRightOrange.svg') }}" alt="">
                 </div>
             </a>
@@ -177,10 +177,10 @@
     <div class="home-blog-head">
         <div class="head-left">
             <h2 class="small-title">{{ __('nav.blog') }}</h2>
-            <h3 class="section-title">Ev və Təmir Sahəsində Son Yeniliklər</h3>
+            <h3 class="section-title">{{ __('general.home_blog_title') }}</h3>
         </div>
         <a href="{{ route('blog.index', $locale) }}" class="more">
-            Hamısına bax
+            {{ __('general.view_all') }}
             <img src="{{ asset('frontend/icons/arrowRightOrange.svg') }}" alt="">
         </a>
     </div>
@@ -202,7 +202,7 @@
                     </div>
                     <div class="card-body-bottom">
                         <div class="more">
-                            <p>Ətraflı</p>
+                            <p>{{ __('general.details') }}</p>
                             <img src="{{ asset('frontend/icons/arrowRightOrange.svg') }}" alt="">
                         </div>
                         <p class="share-date">{{ $post->published_at?->translatedFormat('d F Y') }}</p>
@@ -221,10 +221,10 @@
     <div class="home-portfolio-head">
         <div class="head-left">
             <h2 class="small-title">{{ __('nav.portfolio') }}</h2>
-            <h3 class="section-title">Peşəkarlığımızın Real Nəticələri</h3>
+            <h3 class="section-title">{{ __('general.home_portfolio_title') }}</h3>
         </div>
         <a href="{{ route('portfolio.index', $locale) }}" class="more">
-            Hamısına bax
+            {{ __('general.view_all') }}
             <img src="{{ asset('frontend/icons/arrowRightOrange.svg') }}" alt="">
         </a>
     </div>
@@ -245,7 +245,7 @@
                     <p>{{ $item->getTranslation('short_description', $locale) }}</p>
                 </div>
                 <a href="{{ route('portfolio.show', [$locale, $item->getTranslation('slug', $locale)]) }}" class="more">
-                    <p>Ətraflı</p>
+                    <p>{{ __('general.details') }}</p>
                     <img src="{{ asset('frontend/icons/arrowRightOrange.svg') }}" alt="">
                 </a>
             </div>
@@ -265,14 +265,14 @@
 <section class="home-order-container p-lr">
     <div class="home-order">
         <div class="home-order-content">
-            <h2 class="section-title">{{ $ctaTitle ?: 'Bir Kliklə Peşəkar Usta Sifariş Edin!' }}</h2>
+            <h2 class="section-title">{{ $ctaTitle ?: __('general.home_cta_fallback') }}</h2>
             @if($ctaDesc)
             <div class="description">
                 <p>{{ $ctaDesc }}</p>
             </div>
             @endif
             <a href="{{ $ctaBtnUrl }}" class="more">
-                <p>{{ $ctaBtnText ?: 'Sifariş Et' }}</p>
+                <p>{{ $ctaBtnText ?: __('general.order_now') }}</p>
                 <img src="{{ asset('frontend/icons/hammer.svg') }}" alt="">
             </a>
         </div>
@@ -292,8 +292,8 @@
 <section class="review-container p-lr">
     <div class="review-head">
         <div class="head-left">
-            <h2 class="small-title">Rəylər</h2>
-            <h3 class="section-title">Bizə Güvənənlərin Rəyləri</h3>
+            <h2 class="small-title">{{ __('general.reviews') }}</h2>
+            <h3 class="section-title">{{ __('general.reviews_subtitle') }}</h3>
         </div>
     </div>
     <div class="review-slide swiper">

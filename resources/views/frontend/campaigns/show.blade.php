@@ -13,11 +13,11 @@
 
     {{-- Breadcrumb --}}
     <div class="breadCrumb">
-        <a href="{{ route('home', $locale) }}" class="breadCrumb-item">Ana səhifə</a>
+        <a href="{{ route('home', $locale) }}" class="breadCrumb-item">{{ __('nav.home') }}</a>
         <div class="icon">
             <img src="{{ asset('frontend/icons/arrowRightGrey.svg') }}" alt="">
         </div>
-        <a href="{{ route('campaigns.index', $locale) }}" class="breadCrumb-item">Özəl kampaniyalar</a>
+        <a href="{{ route('campaigns.index', $locale) }}" class="breadCrumb-item">{{ __('nav.campaigns') }}</a>
         <div class="icon">
             <img src="{{ asset('frontend/icons/arrowRightOrange2.svg') }}" alt="">
         </div>
@@ -40,12 +40,12 @@
             <div class="share">
                 <button class="share-btn" type="button">
                     <img src="{{ asset('frontend/icons/shareOrange.svg') }}" alt="">
-                    <p>Paylaş</p>
+                    <p>{{ __('general.share') }}</p>
                 </button>
                 <div class="shareList">
                     <button class="shareItem copyUrl">
                         <img src="{{ asset('frontend/icons/pin_colored.svg') }}" alt="">
-                        Linki kopyala
+                        {{ __('general.copy_link') }}
                     </button>
                     <a href="https://wa.me/?text={{ urlencode(request()->url()) }}" target="_blank" class="shareItem">
                         <img src="{{ asset('frontend/icons/wp_colored.svg') }}" alt="">
@@ -78,7 +78,7 @@
     {{-- Description --}}
     @if($campaign->getTranslation('content', $locale))
     <div class="special-campaing-detail-description">
-        <h2 class="description-title">Ümumi məlumat</h2>
+        <h2 class="description-title">{{ __('general.general_info') }}</h2>
         <div class="description">
             {!! $campaign->getTranslation('content', $locale) !!}
         </div>
@@ -91,7 +91,7 @@
 <script>
 document.querySelector('.copyUrl')?.addEventListener('click', function() {
     navigator.clipboard.writeText(window.location.href).then(function() {
-        alert('Link kopyalandı!');
+        alert('{{ __('general.link_copied') }}');
     });
 });
 </script>
@@ -115,8 +115,8 @@ document.querySelector('.copyUrl')?.addEventListener('click', function() {
         '@context'        => 'https://schema.org',
         '@type'           => 'BreadcrumbList',
         'itemListElement' => [
-            ['@type' => 'ListItem', 'position' => 1, 'name' => 'Ana səhifə',       'item' => url($locale)],
-            ['@type' => 'ListItem', 'position' => 2, 'name' => 'Özəl kampaniyalar','item' => route('campaigns.index', $locale)],
+            ['@type' => 'ListItem', 'position' => 1, 'name' => __('nav.home'),      'item' => url($locale)],
+            ['@type' => 'ListItem', 'position' => 2, 'name' => __('nav.campaigns'), 'item' => route('campaigns.index', $locale)],
             ['@type' => 'ListItem', 'position' => 3, 'name' => $campaign->getTranslation('title', $locale), 'item' => url()->current()],
         ],
     ];

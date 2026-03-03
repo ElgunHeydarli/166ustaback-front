@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', \App\Models\Setting::get('meta_title', '166 Usta') . ' — Haqqımızda')
+@section('title', \App\Models\Setting::get('meta_title', '166 Usta') . ' — ' . __('nav.about'))
 @section('meta_description', \App\Models\Setting::get('meta_description', ''))
 
 @section('content')
@@ -8,7 +8,7 @@
 {{-- Banner --}}
 <section class="about-container p-lr">
     <div class="banner">
-        <h1 class="banner-title">Haqqımızda</h1>
+        <h1 class="banner-title">{{ __('nav.about') }}</h1>
         <img src="{{ asset('frontend/images/headBanner.png') }}" alt="">
     </div>
 </section>
@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="home-about-content">
-        <h2 class="small-title">Haqqımızda</h2>
+        <h2 class="small-title">{{ __('nav.about') }}</h2>
         @if($about->getTranslation('title', $locale))
         <h3 class="section-title">{{ $about->getTranslation('title', $locale) }}</h3>
         @endif
@@ -157,8 +157,8 @@
 <section class="review-container p-lr">
     <div class="review-head">
         <div class="head-left">
-            <h2 class="small-title">Rəylər</h2>
-            <h3 class="section-title">Bizə Güvənənlərin Rəyləri</h3>
+            <h2 class="small-title">{{ __('general.reviews') }}</h2>
+            <h3 class="section-title">{{ __('general.reviews_subtitle') }}</h3>
         </div>
     </div>
     <div class="review-slide swiper">

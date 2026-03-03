@@ -389,7 +389,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p class="all-right-reserved">©{{ date('Y') }} | {{ $siteName }}. All rights reserved</p>
+                <p class="all-right-reserved">©{{ date('Y') }} | {{ $siteName }}. {{ __('general.all_rights') }}</p>
                 <a href="{{ route('privacy', $locale) }}" class="privacy_policy">{{ __('footer.privacy') }}</a>
                 <div class="socials">
                     @foreach($socialLinks as $sl)
@@ -429,7 +429,7 @@
     {{-- WhatsApp Floating Button --}}
     @php $_wpFloat = preg_replace('/[^0-9]/', '', \App\Models\Setting::get('whatsapp', \App\Models\Setting::get('phone', ''))); @endphp
     @if($_wpFloat)
-    <a href="https://wa.me/{{ $_wpFloat }}" class="wp-float-btn" target="_blank" rel="noopener" aria-label="WhatsApp ilə əlaqə">
+    <a href="https://wa.me/{{ $_wpFloat }}" class="wp-float-btn" target="_blank" rel="noopener" aria-label="{{ __('general.whatsapp_contact') }}">
         <img src="{{ asset('frontend/icons/wp.svg') }}" alt="WhatsApp">
     </a>
     <style>

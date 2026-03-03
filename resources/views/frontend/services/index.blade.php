@@ -25,7 +25,7 @@
                 <p>{{ strip_tags($service->getTranslation('short_description', $locale)) }}</p>
             </div>
             <div class="more">
-                <p>Ətraflı</p>
+                <p>{{ __('general.details') }}</p>
                 <img src="{{ asset('frontend/icons/arrowRightOrange.svg') }}" alt="">
             </div>
         </a>
@@ -33,7 +33,7 @@
     </div>
     @else
     <div style="text-align:center;padding:80px 0;color:#999;">
-        <p style="font-size:1.1rem;">Hələ xidmət yoxdur.</p>
+        <p style="font-size:1.1rem;">{{ __('general.no_services') }}</p>
     </div>
     @endif
 </section>

@@ -13,11 +13,11 @@
 
     {{-- Breadcrumb --}}
     <div class="breadCrumb">
-        <a href="{{ route('home', $locale) }}" class="breadCrumb-item">Ana səhifə</a>
+        <a href="{{ route('home', $locale) }}" class="breadCrumb-item">{{ __('nav.home') }}</a>
         <div class="icon">
             <img src="{{ asset('frontend/icons/arrowRightGrey.svg') }}" alt="">
         </div>
-        <a href="{{ route('boxes.index', $locale) }}" class="breadCrumb-item">Qutular</a>
+        <a href="{{ route('boxes.index', $locale) }}" class="breadCrumb-item">{{ __('nav.boxes') }}</a>
         <div class="icon">
             <img src="{{ asset('frontend/icons/arrowRightOrange2.svg') }}" alt="">
         </div>
@@ -48,7 +48,7 @@
             @if($box->price)
             <div class="price-box">
                 <div class="price-box-left">
-                    <span>Qiymət</span>
+                    <span>{{ __('general.price') }}</span>
                     <p class="price">{{ number_format($box->price, 0) }} ₼</p>
                 </div>
                 <div class="counter">
@@ -69,12 +69,12 @@
             @if($phone)
             <div class="detail-contact">
                 <a href="tel:{{ $phone }}" class="call">
-                    <p>Əlaqə saxla</p>
+                    <p>{{ __('general.contact_link') }}</p>
                     <img src="{{ asset('frontend/icons/phoneWhite.svg') }}" alt="">
                 </a>
                 <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $wp) }}" target="_blank" class="wp">
                     <img src="{{ asset('frontend/icons/wp.svg') }}" alt="">
-                    <p>Whatsapp ilə sifariş</p>
+                    <p>{{ __('general.order_via_whatsapp') }}</p>
                 </a>
             </div>
             @endif
@@ -84,7 +84,7 @@
     {{-- Description --}}
     @if($box->getTranslation('content', $locale))
     <div class="box-detail-description">
-        <h2 class="description-title">Ümumi məlumat</h2>
+        <h2 class="description-title">{{ __('general.general_info') }}</h2>
         <div class="description">
             {!! $box->getTranslation('content', $locale) !!}
         </div>
@@ -111,8 +111,8 @@
         '@context'        => 'https://schema.org',
         '@type'           => 'BreadcrumbList',
         'itemListElement' => [
-            ['@type' => 'ListItem', 'position' => 1, 'name' => 'Ana səhifə', 'item' => url($locale)],
-            ['@type' => 'ListItem', 'position' => 2, 'name' => 'Qutular',    'item' => route('boxes.index', $locale)],
+            ['@type' => 'ListItem', 'position' => 1, 'name' => __('nav.home'),  'item' => url($locale)],
+            ['@type' => 'ListItem', 'position' => 2, 'name' => __('nav.boxes'), 'item' => route('boxes.index', $locale)],
             ['@type' => 'ListItem', 'position' => 3, 'name' => $box->getTranslation('title', $locale), 'item' => url()->current()],
         ],
     ];

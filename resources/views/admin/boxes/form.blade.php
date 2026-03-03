@@ -1,0 +1,123 @@
+@extends('admin.layouts.app')
+@section('title', $box->exists ? 'Qutu Düzəlt' : 'Yeni Qutu')
+@section('content')
+<div class="page-header">
+    <h1><i class="bi bi-box-seam me-2" style="color:#ff6b35"></i>{{ $box->exists ? 'Qutu Düzəlt' : 'Yeni Qutu' }}</h1>
+    <a href="{{ route('admin.boxes.index') }}" class="btn btn-sm btn-outline-secondary"><i class="bi bi-arrow-left me-1"></i>Geri</a>
+</div>
+<form method="POST" action="{{ $box->exists ? route('admin.boxes.update', $box) : route('admin.boxes.store') }}" enctype="multipart/form-data">
+    @csrf
+    @if($box->exists) @method('PUT') @endif
+    <div class="row g-4">
+        <div class="col-lg-8">
+            <div class="form-card mb-4">
+                <div class="section-title">Əsas Məlumat</div>
+                <ul class="nav nav-tabs mb-3">
+                    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#box-az">🇦🇿 AZ</a></li>
+                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#box-en">🇬🇧 EN</a></li>
+                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#box-ru">🇷🇺 RU</a></li>
+                </ul>
+                <div class="tab-content">
+                    @foreach(['az'=>'AZ','en'=>'EN','ru'=>'RU'] as $lang=>$lbl)
+                    <div class="tab-pane fade {{ $lang==='az'?'show active':'' }}" id="box-{{ $lang }}">
+                        <div class="mb-3">
+                            <label class="form-label">Başlıq ({{ $lbl }}) @if($lang==='az')<span class="text-danger">*</span>@endif</label>
+                            <input type="text" name="title[{{ $lang }}]" class="form-control title-input" data-lang="{{ $lang }}"
+                                   value="{{ old('title.'.$lang, $box->getTranslation('title',$lang,false)) }}" {{ $lang==='az'?'required':'' }}>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Slug ({{ $lbl }})</label>
+                            <input type="text" name="slug[{{ $lang }}]" class="form-control font-monospace slug-input" data-lang="{{ $lang }}"
+                                   value="{{ old('slug.'.$lang, $box->getTranslation('slug',$lang,false)) }}">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Kateqoriya ({{ $lbl }})</label>
+                            <input type="text" name="category[{{ $lang }}]" class="form-control"
+                                   value="{{ old('category.'.$lang, $box->getTranslation('category',$lang,false)) }}" placeholder="Standart, Premium...">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Qısa Təsvir ({{ $lbl }})</label>
+                            <textarea name="short_description[{{ $lang }}]" class="form-control ckeditor" rows="2">{{ old('short_description.'.$lang, $box->getTranslation('short_description',$lang,false)) }}</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Ətraflı Məzmun ({{ $lbl }})</label>
+                            <textarea name="content[{{ $lang }}]" class="form-control ckeditor" rows="8">{{ old('content.'.$lang, $box->getTranslation('content',$lang,false)) }}</textarea>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                <div class="mt-2 mb-3">
+                    <label class="form-label">Qiymət (₼)</label>
+                    <input type="number" name="price" class="form-control" step="0.01" min="0" value="{{ old('price', $box->price) }}" style="max-width:200px;">
+                </div>
+            </div>
+            <div class="form-card">
+                <div class="section-title"><i class="bi bi-search me-1"></i>SEO</div>
+                <ul class="nav nav-tabs mb-3">
+                    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#box-seo-az">🇦🇿 AZ</a></li>
+                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#box-seo-en">🇬🇧 EN</a></li>
+                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#box-seo-ru">🇷🇺 RU</a></li>
+                </ul>
+                <div class="tab-content">
+                    @foreach(['az'=>'AZ','en'=>'EN','ru'=>'RU'] as $lang=>$lbl)
+                    <div class="tab-pane fade {{ $lang==='az'?'show active':'' }}" id="box-seo-{{ $lang }}">
+                        <div class="mb-3">
+                            <label class="form-label">Meta Başlıq ({{ $lbl }})</label>
+                            <input type="text" name="meta_title[{{ $lang }}]" class="form-control" maxlength="60"
+                                   value="{{ old('meta_title.'.$lang, $box->getTranslation('meta_title',$lang,false)) }}">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Meta Təsvir ({{ $lbl }})</label>
+                            <textarea name="meta_description[{{ $lang }}]" class="form-control" rows="2" maxlength="160">{{ old('meta_description.'.$lang, $box->getTranslation('meta_description',$lang,false)) }}</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Meta Açar Sözlər ({{ $lbl }})</label>
+                            <input type="text" name="meta_keywords[{{ $lang }}]" class="form-control"
+                                   value="{{ old('meta_keywords.'.$lang, $box->getTranslation('meta_keywords',$lang,false)) }}">
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-card mb-4">
+                <div class="section-title">Parametrlər</div>
+                <div class="mb-3">
+                    <label class="form-label">Sıra</label>
+                    <input type="number" name="order" class="form-control" min="0" value="{{ old('order', $box->order ?? 0) }}">
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" name="is_active" id="isActive" value="1"
+                           {{ old('is_active', $box->is_active ?? true) ? 'checked' : '' }}>
+                    <label class="form-check-label fw-semibold" for="isActive">Aktiv</label>
+                </div>
+            </div>
+            <div class="form-card">
+                <div class="section-title">Kapak Şəkil</div>
+                @if($box->cover_image)<img src="{{ Storage::url($box->cover_image) }}" class="w-100 rounded mb-2" style="max-height:140px;object-fit:cover;">@endif
+                <input type="file" name="cover_image" class="form-control" accept="image/*">
+            </div>
+            <div class="mt-3 d-grid">
+                <button type="submit" class="btn" style="background:#ff6b35;color:#fff;padding:12px;font-weight:600;border-radius:8px;">
+                    <i class="bi bi-check-lg me-2"></i>{{ $box->exists ? 'Yadda Saxla' : 'Əlavə Et' }}
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+@endsection
+@push('scripts')
+<script>
+document.querySelectorAll('.title-input').forEach(function(titleInput) {
+    var lang = titleInput.dataset.lang;
+    titleInput.addEventListener('input', function() {
+        var slugInput = document.querySelector('.slug-input[data-lang="' + lang + '"]');
+        if (slugInput && !slugInput.dataset.manual) {
+            slugInput.value = this.value.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9\-]/g,'').replace(/--+/g,'-').replace(/^-+|-+$/g,'');
+        }
+    });
+});
+document.querySelectorAll('.slug-input').forEach(function(s){ s.addEventListener('input',function(){ this.dataset.manual='1'; }); });
+</script>
+@endpush

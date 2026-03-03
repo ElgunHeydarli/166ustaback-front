@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/swiper/swiper.css" />
+    <link rel="stylesheet" href="./assets/style/style.css" />
+  </head>
+  <body>
+    <header class="p-lr">
+      <div class="header-container">
+        <div class="header-links">
+          <a href="index.html" class="header-link active">Ana səhifə</a>
+          <a href="about.html" class="header-link">Haqqımızda</a>
+          <a href="portfolio.html" class="header-link">Portfolio</a>
+          <a href="blog.html" class="header-link">Bloq</a>
+          <a href="contact.html" class="header-link">Əlaqə</a>
+        </div>
+        <div class="header-right">
+          <a href="" class="header-contact">
+            <div class="icon">
+              <img src="./assets/icons/phoneOrange.svg" alt="" />
+            </div>
+            <p>+994 00 000 00 00</p>
+          </a>
+          <a href="" class="header-contact">
+            <div class="icon">
+              <img src="./assets/icons/mailOrange.svg" alt="" />
+            </div>
+            <p>numune@gmail.com</p>
+          </a>
+          <div class="language">
+            <button class="lang-btn" type="button">
+              <img
+                src="./assets/icons/earthOrange.svg"
+                alt=""
+                class="earthIcon"
+              />
+              <p>Azərbaycan dili</p>
+              <img
+                src="./assets/icons/arrowDownBlack.svg"
+                alt=""
+                class="downIcon"
+              />
+            </button>
+            <div class="other-languages">
+              <a href="" class="lang-item">Engilis dili</a>
+              <a href="" class="lang-item">Rus dili</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <nav class="p-lr">
+      <div class="navbar-container">
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.svg" alt="" />
+        </a>
+        <div class="navbar-links">
+          <div class="link-menu">
+            <a href="services.html" class="menu-main-link">
+              Usta xidmətləri
+              <img src="./assets/icons/arrowDownBlack.svg" alt="" />
+            </a>
+            <div class="sub-menu">
+              <a href="service-detail.html" class="sub-menu-link">Mebel</a>
+              <a href="service-detail.html" class="sub-menu-link">Santexnik</a>
+              <a href="service-detail.html" class="sub-menu-link">Elektrik</a>
+              <a href="service-detail.html" class="sub-menu-link">Qazanxana</a>
+              <a href="service-detail.html" class="sub-menu-link">Çilingər</a>
+              <a href="service-detail.html" class="sub-menu-link"
+                >Qapı & Pəncərə</a
+              >
+            </div>
+          </div>
+          <div class="link-menu">
+            <a href="boxes.html" class="menu-main-link">
+              Qutular
+              <img src="./assets/icons/arrowDownBlack.svg" alt="" />
+            </a>
+            <div class="sub-menu">
+              <a href="box-detail.html" class="sub-menu-link"
+                >Lorem ipsum dolor sit amet</a
+              >
+              <a href="box-detail.html" class="sub-menu-link"
+                >Lorem ipsum dolor sit amet</a
+              >
+              <a href="box-detail.html" class="sub-menu-link"
+                >Lorem ipsum dolor sit amet</a
+              >
+              <a href="box-detail.html" class="sub-menu-link"
+                >Lorem ipsum dolor sit amet</a
+              >
+            </div>
+          </div>
+          <div class="link-menu">
+            <p class="menu-main-link">
+              Digər xidmətlərimiz
+              <img src="./assets/icons/arrowDownBlack.svg" alt="" />
+            </p>
+            <div class="sub-menu">
+              <a href="box-detail.html" class="sub-menu-link">Yükdaşıma</a>
+              <a href="box-detail.html" class="sub-menu-link">Global</a>
+              <a href="box-detail.html" class="sub-menu-link">166 Tech</a>
+              <a href="box-detail.html" class="sub-menu-link"
+                >Təmizlik Xidməti</a
+              >
+              <a href="box-detail.html" class="sub-menu-link">Xalça yuma</a>
+              <a href="box-detail.html" class="sub-menu-link"
+                >Sanitariya xidməti</a
+              >
+              <a href="box-detail.html" class="sub-menu-link">166 Transport</a>
+            </div>
+          </div>
+          <a href="special-campaing.html" class="navbar-link"
+            >Özəl kampaniyalar</a
+          >
+        </div>
+        <a href="" class="nav-contact">
+          <p>Əlaqə saxla</p>
+          <img src="./assets/icons/phoneWhite.svg" alt="" />
+        </a>
+        <button class="hamburger" type="button">
+          <img src="./assets/icons/hamburger.svg" alt="" />
+        </button>
+      </div>
+    </nav>
+    <section class="about-container p-lr">
+      <div class="banner">
+        <h1 class="banner-title">Haqqımızda</h1>
+        <img src="./assets/images/headBanner.png" alt="" />
+      </div>
+    </section>
+    <section class="mobileMenu-overlay">
+      <div class="mobileMenu">
+        <div class="mobileMenu-head">
+          <a href="index.html" class="logo">
+            <img src="./assets/images/logo.svg" alt="" />
+          </a>
+          <button class="closeMenu" type="button">
+            <img src="./assets/icons/closeOrange.svg" alt="" />
+          </button>
+        </div>
+        <div class="mobile-lang">
+          <a class="mobile-lang-item active">AZ</a>
+          <span class="seperate"></span>
+          <a class="mobile-lang-item">EN</a>
+          <span class="seperate"></span>
+          <a class="mobile-lang-item">RU</a>
+        </div>
+        <div class="mobileMenu-links">
+          <a href="index.html" class="mobileMenu-link">Ana səhifə</a>
+          <a href="about.html" class="mobileMenu-link">Haqqımızda</a>
+          <a href="portfolio.html" class="mobileMenu-link">Portfolio</a>
+          <a href="blog.html" class="mobileMenu-link">Bloq</a>
+          <a href="special-campaing.html" class="mobileMenu-link"
+            >Özəl kampaniyalar</a
+          >
+          <div class="link-menu">
+            <div class="menu-main">
+              <a href="services.html" class="main-link">Usta xidmətləri</a>
+              <button class="menu-drop-btn" type="button">
+                <img src="./assets/icons/arrowDownBlack.svg" alt="" />
+              </button>
+            </div>
+            <div class="menu-subMenu">
+              <a href="service-detail.html" class="subMenu-link">Mebel</a>
+              <a href="service-detail.html" class="subMenu-link">Santexnik</a>
+              <a href="service-detail.html" class="subMenu-link">Elektrik</a>
+              <a href="service-detail.html" class="subMenu-link">Qazanxana</a>
+              <a href="service-detail.html" class="subMenu-link">Çilingər</a>
+              <a href="service-detail.html" class="subMenu-link"
+                >Qapı & Pəncərə</a
+              >
+            </div>
+          </div>
+          <div class="link-menu">
+            <div class="menu-main">
+              <p class="main-link">Digər xidmətlərimiz</p>
+              <button class="menu-drop-btn" type="button">
+                <img src="./assets/icons/arrowDownBlack.svg" alt="" />
+              </button>
+            </div>
+            <div class="menu-subMenu">
+              <a href="box-detail.html" class="subMenu-link">Yükdaşıma</a>
+              <a href="box-detail.html" class="subMenu-link">Global</a>
+              <a href="box-detail.html" class="subMenu-link">166 Tech</a>
+              <a href="box-detail.html" class="subMenu-link"
+                >Təmizlik Xidməti</a
+              >
+              <a href="box-detail.html" class="subMenu-link">Xalça yuma</a>
+              <a href="box-detail.html" class="subMenu-link"
+                >Sanitariya xidməti</a
+              >
+              <a href="box-detail.html" class="subMenu-link">166 Transport</a>
+            </div>
+          </div>
+          <div class="link-menu">
+            <div class="menu-main">
+              <a href="boxes.html" class="main-link">Qutular</a>
+              <button class="menu-drop-btn" type="button">
+                <img src="./assets/icons/arrowDownBlack.svg" alt="" />
+              </button>
+            </div>
+            <div class="menu-subMenu">
+              <a href="box-detail.html" class="subMenu-link"
+                >Lorem ipsum dolor sit amet</a
+              >
+              <a href="box-detail.html" class="subMenu-link"
+                >Lorem ipsum dolor sit amet</a
+              >
+              <a href="box-detail.html" class="subMenu-link"
+                >Lorem ipsum dolor sit amet</a
+              >
+              <a href="box-detail.html" class="subMenu-link"
+                >Lorem ipsum dolor sit amet</a
+              >
+            </div>
+          </div>
+          <a href="contact.html" class="mobileMenu-link">Əlaqə</a>
+        </div>
+        <div class="mobileMenu-contact">
+          <a href="" class="mobileMenu-contact-item">
+            <div class="icon">
+              <img src="./assets/icons/phoneOrange.svg" alt="" />
+            </div>
+            <p>+994 00 000 00 00</p>
+          </a>
+          <a href="" class="mobileMenu-contact-item">
+            <div class="icon">
+              <img src="./assets/icons/mailOrange.svg" alt="" />
+            </div>
+            <p>numune@gmail.com</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="home-about p-lr">
+      <div class="home-about-images">
+        <div class="image-large">
+          <img src="./assets/images/homeAboutLarge.png" alt="" />
+        </div>
+        <div class="image-small">
+          <img src="./assets/images/homeAboutSmall.png" alt="" />
+        </div>
+      </div>
+      <div class="home-about-content">
+        <h2 class="small-title">Haqqımızda</h2>
+        <h3 class="section-title">Eviniz üçün Etibarlı Həll Platforması</h3>
+        <div class="description">
+          <p>
+            166 Usta Xidməti müxtəlif sahələr üzrə yoxlanılmış və təcrübəli
+            ustaları bir platformada birləşdirir. Məqsədimiz usta tapmaq
+            prosesini daha asan, təhlükəsiz və sürətli etməkdir.Hər bir xidmət
+            keyfiyyət standartlarına uyğun şəkildə təqdim olunur və müştəri
+            məmnuniyyəti daim nəzarətdə saxlanılır.
+          </p>
+          <br />
+          <p>
+            Biz inanırıq ki, etibar illərlə qurulur. Buna görə də komandamız
+            yalnız təcrübəli və yoxlanılmış ustalardan ibarətdir. Müştəri
+            məmnuniyyəti bizim üçün əsas göstəricidir və hər bir rəy bizim
+            inkişaf istiqamətimizi müəyyənləşdirir.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="parnters-container p-lr">
+      <div class="partners-slide swiper">
+        <div class="swiper-wrapper">
+          <div class="partner-item swiper-slide">
+            <img src="./assets/images/partnerLogo1.svg" alt="" />
+          </div>
+          <div class="partner-item swiper-slide">
+            <img src="./assets/images/partnerLogo2.svg" alt="" />
+          </div>
+          <div class="partner-item swiper-slide">
+            <img src="./assets/images/partnerLogo3.svg" alt="" />
+          </div>
+          <div class="partner-item swiper-slide">
+            <img src="./assets/images/partnerLogo4.svg" alt="" />
+          </div>
+          <div class="partner-item swiper-slide">
+            <img src="./assets/images/partnerLogo5.svg" alt="" />
+          </div>
+          <div class="partner-item swiper-slide">
+            <img src="./assets/images/partnerLogo6.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="why-us-wrapper">
+      <div class="why-us">
+        <div class="why-us-container p-lr">
+          <h2 class="section-title">Niyə 166 Usta Xidmətini Seçməlisiniz?</h2>
+          <div class="sub-title">
+            <p>
+              Biz müştərilərimizə sadəcə xidmət deyil, etibar və rahatlıq təqdim
+              edirik. Hər sifarişə məsuliyyətlə yanaşır, keyfiyyət
+              standartlarına uyğun və vaxtında icra təmin edirik.
+            </p>
+          </div>
+          <div class="why-us-main">
+            <div class="line-indicator">
+              <div class="line-track">
+                <div class="line-dot"></div>
+              </div>
+            </div>
+            <div class="swiper why-us-content-slide">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide content-item">
+                  <div class="content-inner">
+                    <h3 class="content-title">
+                      Yoxlanılmış və Peşəkar Ustalar
+                    </h3>
+                    <div class="description">
+                      <p>
+                        Komandamız təcrübəli və etibarlı ustalardan ibarətdir.
+                        Hər bir usta seçmə prosesindən keçir və xidmət
+                        keyfiyyətinə nəzarət olunur.
+                      </p>
+                      <br />
+                      <p>
+                        Məqsədimiz problemi tez həll etmək və uzunmüddətli
+                        məmnuniyyət yaratmaqdır.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide content-item">
+                  <div class="content-inner">
+                    <h3 class="content-title">Sürətli və Operativ Xidmət</h3>
+                    <div class="description">
+                      <p>
+                        Sifarişiniz qısa müddət ərzində qəbul edilir və ən uyğun
+                        usta yönləndirilir. Təcili hallarda belə operativ
+                        reaksiya təmin olunur.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide content-item">
+                  <div class="content-inner">
+                    <h3 class="content-title">Lorem ipsum dolor sit.</h3>
+                    <div class="description">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Facilis ipsa rem saepe obcaecati pariatur porro magni
+                        quod beatae voluptate incidunt.
+                      </p>
+                      <br />
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Facilis ipsa rem saepe obcaecati pariatur porro magni
+                        quod beatae voluptate incidunt.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <div class="why-us-images">
+              <div thumbsSlider="" class="swiper why-us-images-slide">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide why-us-image-item">
+                    <img src="./assets/images/whyUs1.png" />
+                  </div>
+                  <div class="swiper-slide why-us-image-item">
+                    <img src="./assets/images/whyUs2.png" />
+                  </div>
+                  <div class="swiper-slide why-us-image-item">
+                    <img src="./assets/images/whyUs3.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mobile-why-us-slide swiper">
+            <div class="swiper-wrapper">
+              <div class="mobile-why-us-item swiper-slide">
+                <div class="item-image">
+                  <img src="./assets/images/whyUs1.png" />
+                </div>
+                <h3 class="item-title">Yoxlanılmış və Peşəkar Ustalar</h3>
+                <div class="description">
+                  <p>
+                    Komandamız təcrübəli və etibarlı ustalardan ibarətdir. Hər
+                    bir usta seçmə prosesindən keçir və xidmət keyfiyyətinə
+                    nəzarət olunur.
+                  </p>
+                  <br />
+                  <p>
+                    Məqsədimiz problemi tez həll etmək və uzunmüddətli
+                    məmnuniyyət yaratmaqdır.
+                  </p>
+                </div>
+              </div>
+              <div class="mobile-why-us-item swiper-slide">
+                <div class="item-image">
+                  <img src="./assets/images/whyUs2.png" />
+                </div>
+                <h3 class="item-title">Sürətli və Operativ Xidmət</h3>
+                <div class="description">
+                  <p>
+                    Sifarişiniz qısa müddət ərzində qəbul edilir və ən uyğun
+                    usta yönləndirilir. Təcili hallarda belə operativ reaksiya
+                    təmin olunur.
+                  </p>
+                </div>
+              </div>
+              <div class="mobile-why-us-item swiper-slide">
+                <div class="item-image">
+                  <img src="./assets/images/whyUs3.png" />
+                </div>
+                <h3 class="item-title">Lorem ipsum dolor sit.</h3>
+                <div class="description">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Facilis ipsa rem saepe obcaecati pariatur porro magni quod
+                    beatae voluptate incidunt.
+                  </p>
+                  <br />
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Facilis ipsa rem saepe obcaecati pariatur porro magni quod
+                    beatae voluptate incidunt.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="review-container p-lr">
+      <div class="review-head">
+        <div class="head-left">
+          <h2 class="small-title">Rəylər</h2>
+          <h3 class="section-title">Bizə Güvənənlərin Rəyləri</h3>
+        </div>
+      </div>
+      <div class="review-slide swiper">
+        <div class="swiper-wrapper">
+          <div class="review-item swiper-slide">
+            <div class="review-item-head">
+              <div class="review-image">
+                <img src="./assets/images/reviewImg1.png" alt="" />
+              </div>
+              <div class="review-info">
+                <h2 class="owner-name">Samirə Kərimova</h2>
+                <p class="owner-position">Santexnik xidməti</p>
+              </div>
+            </div>
+            <div class="description">
+              <p>
+                “Kombi işləmirdi və təcili ustaya ehtiyacımız var idi. 166 Usta
+                xidməti vasitəsilə sifariş verdik və qısa zamanda müraciətimiz
+                cavablandırıldı. Problem həll olundu və işə zəmanət verildi.
+                Məmnun qaldıq.”
+              </p>
+            </div>
+          </div>
+          <div class="review-item swiper-slide">
+            <div class="review-item-head">
+              <div class="review-image">
+                <img src="./assets/images/reviewImg2.png" alt="" />
+              </div>
+              <div class="review-info">
+                <h2 class="owner-name">Elvin Həsənov</h2>
+                <p class="owner-position">Elektrik xidməti</p>
+              </div>
+            </div>
+            <div class="description">
+              <p>
+                “Evdə elektrik xətləri ilə bağlı nasazlıq var idi. Usta problemi
+                tez aşkar etdi və təhlükəsiz şəkildə aradan qaldırdı. Qiymət
+                əvvəlcədən bildirildi və əlavə ödəniş tələb olunmadı. Etibarlı
+                xidmət üçün təşəkkür edirəm.”
+              </p>
+            </div>
+          </div>
+          <div class="review-item swiper-slide">
+            <div class="review-item-head">
+              <div class="review-image">
+                <img src="./assets/images/reviewImg3.png" alt="" />
+              </div>
+              <div class="review-info">
+                <h2 class="owner-name">İlham Məmmədli</h2>
+                <p class="owner-position">Santexnik xidməti</p>
+              </div>
+            </div>
+            <div class="description">
+              <p>
+                “Kombi işləmirdi və təcili ustaya ehtiyacımız var idi. 166 Usta
+                xidməti vasitəsilə sifariş verdik və qısa zamanda müraciətimiz
+                cavablandırıldı. Problem həll olundu və işə zəmanət verildi.
+                Məmnun qaldıq.”
+              </p>
+            </div>
+          </div>
+          <div class="review-item swiper-slide">
+            <div class="review-item-head">
+              <div class="review-image">
+                <img src="./assets/images/reviewImg1.png" alt="" />
+              </div>
+              <div class="review-info">
+                <h2 class="owner-name">Samirə Kərimova</h2>
+                <p class="owner-position">Santexnik xidməti</p>
+              </div>
+            </div>
+            <div class="description">
+              <p>
+                “Kombi işləmirdi və təcili ustaya ehtiyacımız var idi. 166 Usta
+                xidməti vasitəsilə sifariş verdik və qısa zamanda müraciətimiz
+                cavablandırıldı. Problem həll olundu və işə zəmanət verildi.
+                Məmnun qaldıq.”
+              </p>
+            </div>
+          </div>
+          <div class="review-item swiper-slide">
+            <div class="review-item-head">
+              <div class="review-image">
+                <img src="./assets/images/reviewImg2.png" alt="" />
+              </div>
+              <div class="review-info">
+                <h2 class="owner-name">Elvin Həsənov</h2>
+                <p class="owner-position">Elektrik xidməti</p>
+              </div>
+            </div>
+            <div class="description">
+              <p>
+                “Evdə elektrik xətləri ilə bağlı nasazlıq var idi. Usta problemi
+                tez aşkar etdi və təhlükəsiz şəkildə aradan qaldırdı. Qiymət
+                əvvəlcədən bildirildi və əlavə ödəniş tələb olunmadı. Etibarlı
+                xidmət üçün təşəkkür edirəm.”
+              </p>
+            </div>
+          </div>
+          <div class="review-item swiper-slide">
+            <div class="review-item-head">
+              <div class="review-image">
+                <img src="./assets/images/reviewImg3.png" alt="" />
+              </div>
+              <div class="review-info">
+                <h2 class="owner-name">İlham Məmmədli</h2>
+                <p class="owner-position">Santexnik xidməti</p>
+              </div>
+            </div>
+            <div class="description">
+              <p>
+                “Kombi işləmirdi və təcili ustaya ehtiyacımız var idi. 166 Usta
+                xidməti vasitəsilə sifariş verdik və qısa zamanda müraciətimiz
+                cavablandırıldı. Problem həll olundu və işə zəmanət verildi.
+                Məmnun qaldıq.”
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-container p-lr">
+        <div class="footer-main">
+          <div class="footer-logo-text">
+            <a href="index.html" class="logo">
+              <img src="./assets/images/logo.svg" alt="" />
+            </a>
+            <div class="footer-description">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+                sodales arcu est, ac dignissim eros sollicitudin sed. 
+              </p>
+            </div>
+          </div>
+          <div class="quick-links">
+            <h2 class="quick-links-title">Ümumi keçidlər</h2>
+            <div class="links">
+              <a href="index.html" class="quick-link-item">Ana səhifə</a>
+              <a href="services.html" class="quick-link-item"
+                >Usta xidmətləri</a
+              >
+              <a href="about.html" class="quick-link-item">Haqqımızda</a>
+              <a href="boxes.html" class="quick-link-item">Qutular</a>
+              <a href="portfolio.html" class="quick-link-item">Portfolio</a>
+              <a href="special-campaing.html" class="quick-link-item"
+                >Ozəl kampaniyalar</a
+              >
+              <a href="blog.html" class="quick-link-item">Bloq</a>
+            </div>
+          </div>
+          <div class="last-blogs">
+            <h2 class="last-blogs-title">Ən son bloqlar</h2>
+            <div class="links">
+              <a href="blog-detail.html" class="link-item"
+                >Lorem ipsum dolor sit amet.</a
+              >
+              <a href="blog-detail.html" class="link-item"
+                >Lorem ipsum dolor sit amet.</a
+              >
+              <a href="blog-detail.html" class="link-item"
+                >Lorem ipsum dolor sit amet.</a
+              >
+              <a href="blog-detail.html" class="link-item"
+                >Lorem ipsum dolor sit amet.</a
+              >
+              <a href="blog-detail.html" class="link-item"
+                >Lorem ipsum dolor sit amet.</a
+              >
+            </div>
+          </div>
+          <div class="footer-contact">
+            <h2 class="footer-contact-title">Əlaqə</h2>
+            <div class="footer-contact-items">
+              <a href="" class="footer-contact-item">
+                <div class="icon">
+                  <img src="./assets/icons/phoneOrange.svg" alt="" />
+                </div>
+                <p>+994 00 000 00 00</p>
+              </a>
+              <a href="" class="footer-contact-item">
+                <div class="icon">
+                  <img src="./assets/icons/mailOrange.svg" alt="" />
+                </div>
+                <p>numune@gmail.com</p>
+              </a>
+              <div class="footer-contact-item">
+                <div class="icon">
+                  <img src="./assets/icons/locationOrange.svg" alt="" />
+                </div>
+                <p>Yasamal rayon, Ə.Əhmədov 21 B</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="all-right-reserved">©2026 | 166 Tech. All right reserved</p>
+          <a href="privacy-policy.html" class="privacy_policy"
+            >Məxfilik siyasəti</a
+          >
+          <div class="socials">
+            <a href="" class="social-item">
+              <img src="./assets/icons/fbOrange.svg" alt="" />
+            </a>
+            <a href="" class="social-item">
+              <img src="./assets/icons/instaOrange.svg" alt="" />
+            </a>
+            <a href="" class="social-item">
+              <img src="./assets/icons/wpOrange.svg" alt="" />
+            </a>
+            <a href="" class="social-item">
+              <img src="./assets/icons/ttOrange.svg" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/images/footerVector.svg"
+        alt=""
+        class="footerDecoration"
+      />
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>
+    <script src="./assets/swiper/swiper.js"></script>
+    <script src="./assets/js/index.js"></script>
+  </body>
+</html>

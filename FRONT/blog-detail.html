@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/swiper/swiper.css" />
+    <link rel="stylesheet" href="./assets/style/style.css" />
+  </head>
+  <body>
+    <header class="p-lr">
+      <div class="header-container">
+        <div class="header-links">
+          <a href="index.html" class="header-link active">Ana səhifə</a>
+          <a href="about.html" class="header-link">Haqqımızda</a>
+          <a href="portfolio.html" class="header-link">Portfolio</a>
+          <a href="blog.html" class="header-link">Bloq</a>
+          <a href="contact.html" class="header-link">Əlaqə</a>
+        </div>
+        <div class="header-right">
+          <a href="" class="header-contact">
+            <div class="icon">
+              <img src="./assets/icons/phoneOrange.svg" alt="" />
+            </div>
+            <p>+994 00 000 00 00</p>
+          </a>
+          <a href="" class="header-contact">
+            <div class="icon">
+              <img src="./assets/icons/mailOrange.svg" alt="" />
+            </div>
+            <p>numune@gmail.com</p>
+          </a>
+          <div class="language">
+            <button class="lang-btn" type="button">
+              <img
+                src="./assets/icons/earthOrange.svg"
+                alt=""
+                class="earthIcon"
+              />
+              <p>Azərbaycan dili</p>
+              <img
+                src="./assets/icons/arrowDownBlack.svg"
+                alt=""
+                class="downIcon"
+              />
+            </button>
+            <div class="other-languages">
+              <a href="" class="lang-item">Engilis dili</a>
+              <a href="" class="lang-item">Rus dili</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <nav class="p-lr">
+      <div class="navbar-container">
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.svg" alt="" />
+        </a>
+        <div class="navbar-links">
+          <div class="link-menu">
+            <a href="services.html" class="menu-main-link">
+              Usta xidmətləri
+              <img src="./assets/icons/arrowDownBlack.svg" alt="" />
+            </a>
+            <div class="sub-menu">
+              <a href="service-detail.html" class="sub-menu-link">Mebel</a>
+              <a href="service-detail.html" class="sub-menu-link">Santexnik</a>
+              <a href="service-detail.html" class="sub-menu-link">Elektrik</a>
+              <a href="service-detail.html" class="sub-menu-link">Qazanxana</a>
+              <a href="service-detail.html" class="sub-menu-link">Çilingər</a>
+              <a href="service-detail.html" class="sub-menu-link"
+                >Qapı & Pəncərə</a
+              >
+            </div>
+          </div>
+          <div class="link-menu">
+            <a href="boxes.html" class="menu-main-link">
+              Qutular
+              <img src="./assets/icons/arrowDownBlack.svg" alt="" />
+            </a>
+            <div class="sub-menu">
+              <a href="box-detail.html" class="sub-menu-link"
+                >Lorem ipsum dolor sit amet</a
+              >
+              <a href="box-detail.html" class="sub-menu-link"
+                >Lorem ipsum dolor sit amet</a
+              >
+              <a href="box-detail.html" class="sub-menu-link"
+                >Lorem ipsum dolor sit amet</a
+              >
+              <a href="box-detail.html" class="sub-menu-link"
+                >Lorem ipsum dolor sit amet</a
+              >
+            </div>
+          </div>
+          <div class="link-menu">
+            <p class="menu-main-link">
+              Digər xidmətlərimiz
+              <img src="./assets/icons/arrowDownBlack.svg" alt="" />
+            </p>
+            <div class="sub-menu">
+              <a href="box-detail.html" class="sub-menu-link">Yükdaşıma</a>
+              <a href="box-detail.html" class="sub-menu-link">Global</a>
+              <a href="box-detail.html" class="sub-menu-link">166 Tech</a>
+              <a href="box-detail.html" class="sub-menu-link"
+                >Təmizlik Xidməti</a
+              >
+              <a href="box-detail.html" class="sub-menu-link">Xalça yuma</a>
+              <a href="box-detail.html" class="sub-menu-link"
+                >Sanitariya xidməti</a
+              >
+              <a href="box-detail.html" class="sub-menu-link">166 Transport</a>
+            </div>
+          </div>
+          <a href="special-campaing.html" class="navbar-link"
+            >Özəl kampaniyalar</a
+          >
+        </div>
+        <a href="" class="nav-contact">
+          <p>Əlaqə saxla</p>
+          <img src="./assets/icons/phoneWhite.svg" alt="" />
+        </a>
+        <button class="hamburger" type="button">
+          <img src="./assets/icons/hamburger.svg" alt="" />
+        </button>
+      </div>
+    </nav>
+    <section class="mobileMenu-overlay">
+      <div class="mobileMenu">
+        <div class="mobileMenu-head">
+          <a href="index.html" class="logo">
+            <img src="./assets/images/logo.svg" alt="" />
+          </a>
+          <button class="closeMenu" type="button">
+            <img src="./assets/icons/closeOrange.svg" alt="" />
+          </button>
+        </div>
+        <div class="mobile-lang">
+          <a class="mobile-lang-item active">AZ</a>
+          <span class="seperate"></span>
+          <a class="mobile-lang-item">EN</a>
+          <span class="seperate"></span>
+          <a class="mobile-lang-item">RU</a>
+        </div>
+        <div class="mobileMenu-links">
+          <a href="index.html" class="mobileMenu-link">Ana səhifə</a>
+          <a href="about.html" class="mobileMenu-link">Haqqımızda</a>
+          <a href="portfolio.html" class="mobileMenu-link">Portfolio</a>
+          <a href="blog.html" class="mobileMenu-link">Bloq</a>
+          <a href="special-campaing.html" class="mobileMenu-link"
+            >Özəl kampaniyalar</a
+          >
+          <div class="link-menu">
+            <div class="menu-main">
+              <a href="services.html" class="main-link">Usta xidmətləri</a>
+              <button class="menu-drop-btn" type="button">
+                <img src="./assets/icons/arrowDownBlack.svg" alt="" />
+              </button>
+            </div>
+            <div class="menu-subMenu">
+              <a href="service-detail.html" class="subMenu-link">Mebel</a>
+              <a href="service-detail.html" class="subMenu-link">Santexnik</a>
+              <a href="service-detail.html" class="subMenu-link">Elektrik</a>
+              <a href="service-detail.html" class="subMenu-link">Qazanxana</a>
+              <a href="service-detail.html" class="subMenu-link">Çilingər</a>
+              <a href="service-detail.html" class="subMenu-link"
+                >Qapı & Pəncərə</a
+              >
+            </div>
+          </div>
+          <div class="link-menu">
+            <div class="menu-main">
+              <p class="main-link">Digər xidmətlərimiz</p>
+              <button class="menu-drop-btn" type="button">
+                <img src="./assets/icons/arrowDownBlack.svg" alt="" />
+              </button>
+            </div>
+            <div class="menu-subMenu">
+              <a href="box-detail.html" class="subMenu-link">Yükdaşıma</a>
+              <a href="box-detail.html" class="subMenu-link">Global</a>
+              <a href="box-detail.html" class="subMenu-link">166 Tech</a>
+              <a href="box-detail.html" class="subMenu-link"
+                >Təmizlik Xidməti</a
+              >
+              <a href="box-detail.html" class="subMenu-link">Xalça yuma</a>
+              <a href="box-detail.html" class="subMenu-link"
+                >Sanitariya xidməti</a
+              >
+              <a href="box-detail.html" class="subMenu-link">166 Transport</a>
+            </div>
+          </div>
+          <div class="link-menu">
+            <div class="menu-main">
+              <a href="boxes.html" class="main-link">Qutular</a>
+              <button class="menu-drop-btn" type="button">
+                <img src="./assets/icons/arrowDownBlack.svg" alt="" />
+              </button>
+            </div>
+            <div class="menu-subMenu">
+              <a href="box-detail.html" class="subMenu-link"
+                >Lorem ipsum dolor sit amet</a
+              >
+              <a href="box-detail.html" class="subMenu-link"
+                >Lorem ipsum dolor sit amet</a
+              >
+              <a href="box-detail.html" class="subMenu-link"
+                >Lorem ipsum dolor sit amet</a
+              >
+              <a href="box-detail.html" class="subMenu-link"
+                >Lorem ipsum dolor sit amet</a
+              >
+            </div>
+          </div>
+          <a href="contact.html" class="mobileMenu-link">Əlaqə</a>
+        </div>
+        <div class="mobileMenu-contact">
+          <a href="" class="mobileMenu-contact-item">
+            <div class="icon">
+              <img src="./assets/icons/phoneOrange.svg" alt="" />
+            </div>
+            <p>+994 00 000 00 00</p>
+          </a>
+          <a href="" class="mobileMenu-contact-item">
+            <div class="icon">
+              <img src="./assets/icons/mailOrange.svg" alt="" />
+            </div>
+            <p>numune@gmail.com</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="blog-detail-container p-lr">
+      <div class="breadCrumb">
+        <a href="index.html" class="breadCrumb-item">Ana səhifə</a>
+        <div class="icon">
+          <img src="./assets/icons/arrowRightGrey.svg" alt="" />
+        </div>
+        <a href="blog.html" class="breadCrumb-item">Bloq</a>
+        <div class="icon">
+          <img src="./assets/icons/arrowRightOrange2.svg" alt="" />
+        </div>
+        <p class="breadCrumb-item active">Mebel Quraşdırmada Vacib Məqamlar</p>
+      </div>
+      <div class="blog-detail">
+        <div class="blog-detail-main">
+          <div class="blog-image">
+            <img src="./assets/images/blogDetail.png" alt="" />
+          </div>
+          <p class="share-date">18 fevral 2026</p>
+          <h1 class="blog-title">Lorem ipsum dolor sit amet, consectetur.</h1>
+          <div class="blog-text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+              sodales arcu est, ac dignissim eros sollicitudin sed. Curabitur
+              auctor in orci a mattis. Morbi pellentesque, dolor eu tempus
+              porta, leo tortor sodales purus, non placerat ipsum odio eget
+              mauris.
+            </p>
+            <br />
+            <p>
+              Quisque vitae augue tincidunt, finibus mauris in, luctus eros.
+              Praesent ac erat erat. Morbi eleifend nisi in purus auctor, eget
+              tristique neque sollicitudin. Nulla ac pulvinar nibh, ac
+              pellentesque velit. Pellentesque vel ante scelerisque, tincidunt
+              nisl et, auctor urna. Pellentesque pellentesque vitae arcu ut
+              porttitor. Vivamus consectetur in leo a maximus.
+            </p>
+            <br />
+            <p>
+              Proin finibus posuere risus eu vehicula. Pellentesque consequat
+              nisi eget magna luctus fringilla. Nam non purus sed lectus porta
+              ullamcorper in nec leo. Vivamus molestie dui eget mi facilisis
+              consequat. Aliquam diam leo, condimentum eget sem sit amet,
+              porttitor tempus sem. Nam laoreet vestibulum congue. Donec sed
+              massa massa. Vivamus vel elit sit amet libero auctor consequat
+              euismod nec ipsum.
+            </p>
+            <br />
+            <p>
+              Phasellus in nisi euismod, rhoncus turpis eu, consequat nisi.
+              Morbi elit erat, sollicitudin vel tincidunt et, hendrerit nec
+              lorem. Cras lobortis libero et erat rhoncus, eu hendrerit magna
+              fermentum. Pellentesque varius massa in viverra imperdiet.
+              Maecenas aliquam id ante quis dapibus. Sed bibendum ligula at
+              ipsum dictum, sodales dapibus lectus egestas. Proin augue lacus,
+              ullamcorper pulvinar elit ac, suscipit suscipit nisi.
+            </p>
+          </div>
+        </div>
+        <aside class="blog-detail-aside">
+          <div class="blog-search">
+            <h2 class="blog-search-title">Axtarış</h2>
+            <form action="" class="blog-search-form">
+              <input type="text" placeholder="Axtar" />
+              <button class="searchBlogBtn" type="submit">
+                <img src="./assets/icons/searchOrange.svg" alt="" />
+              </button>
+            </form>
+          </div>
+          <!-- en son 3 denesi gelsin -->
+          <div class="last-blog">
+            <h2 class="last-blog-title">Ən son bloqlar</h2>
+            <div class="last-blog-items">
+              <a href="blog-detail.html" class="blog-item">
+                <div class="item-image">
+                  <img src="./assets/images/last-blog1.png" alt="" />
+                </div>
+                <div class="item-body">
+                  <p class="blog-share">Yan 12,2026</p>
+                  <h3 class="blog-title">
+                    Lorem ipsum dolor sit amet consectetur
+                  </h3>
+                </div>
+              </a>
+              <a href="blog-detail.html" class="blog-item">
+                <div class="item-image">
+                  <img src="./assets/images/last-blog2.png" alt="" />
+                </div>
+                <div class="item-body">
+                  <p class="blog-share">Yan 12,2026</p>
+                  <h3 class="blog-title">
+                    Lorem ipsum dolor sit amet consectetur
+                  </h3>
+                </div>
+              </a>
+              <a href="blog-detail.html" class="blog-item">
+                <div class="item-image">
+                  <img src="./assets/images/last-blog3.png" alt="" />
+                </div>
+                <div class="item-body">
+                  <p class="blog-share">Yan 12,2026</p>
+                  <h3 class="blog-title">
+                    Lorem ipsum dolor sit amet consectetur
+                  </h3>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="blog-tags">
+            <h2 class="blog-tags-title">Taglar</h2>
+            <div class="blog-tags-items">
+              <p class="tag-item">Usta xidməti</p>
+              <p class="tag-item">Mebel</p>
+              <p class="tag-item">Mebel yığılması</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-container p-lr">
+        <div class="footer-main">
+          <div class="footer-logo-text">
+            <a href="index.html" class="logo">
+              <img src="./assets/images/logo.svg" alt="" />
+            </a>
+            <div class="footer-description">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+                sodales arcu est, ac dignissim eros sollicitudin sed. 
+              </p>
+            </div>
+          </div>
+          <div class="quick-links">
+            <h2 class="quick-links-title">Ümumi keçidlər</h2>
+            <div class="links">
+              <a href="index.html" class="quick-link-item">Ana səhifə</a>
+              <a href="services.html" class="quick-link-item"
+                >Usta xidmətləri</a
+              >
+              <a href="about.html" class="quick-link-item">Haqqımızda</a>
+              <a href="boxes.html" class="quick-link-item">Qutular</a>
+              <a href="portfolio.html" class="quick-link-item">Portfolio</a>
+              <a href="special-campaing.html" class="quick-link-item"
+                >Ozəl kampaniyalar</a
+              >
+              <a href="blog.html" class="quick-link-item">Bloq</a>
+            </div>
+          </div>
+          <div class="last-blogs">
+            <h2 class="last-blogs-title">Ən son bloqlar</h2>
+            <div class="links">
+              <a href="blog-detail.html" class="link-item"
+                >Lorem ipsum dolor sit amet.</a
+              >
+              <a href="blog-detail.html" class="link-item"
+                >Lorem ipsum dolor sit amet.</a
+              >
+              <a href="blog-detail.html" class="link-item"
+                >Lorem ipsum dolor sit amet.</a
+              >
+              <a href="blog-detail.html" class="link-item"
+                >Lorem ipsum dolor sit amet.</a
+              >
+              <a href="blog-detail.html" class="link-item"
+                >Lorem ipsum dolor sit amet.</a
+              >
+            </div>
+          </div>
+          <div class="footer-contact">
+            <h2 class="footer-contact-title">Əlaqə</h2>
+            <div class="footer-contact-items">
+              <a href="" class="footer-contact-item">
+                <div class="icon">
+                  <img src="./assets/icons/phoneOrange.svg" alt="" />
+                </div>
+                <p>+994 00 000 00 00</p>
+              </a>
+              <a href="" class="footer-contact-item">
+                <div class="icon">
+                  <img src="./assets/icons/mailOrange.svg" alt="" />
+                </div>
+                <p>numune@gmail.com</p>
+              </a>
+              <div class="footer-contact-item">
+                <div class="icon">
+                  <img src="./assets/icons/locationOrange.svg" alt="" />
+                </div>
+                <p>Yasamal rayon, Ə.Əhmədov 21 B</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="all-right-reserved">©2026 | 166 Tech. All right reserved</p>
+          <a href="privacy-policy.html" class="privacy_policy"
+            >Məxfilik siyasəti</a
+          >
+          <div class="socials">
+            <a href="" class="social-item">
+              <img src="./assets/icons/fbOrange.svg" alt="" />
+            </a>
+            <a href="" class="social-item">
+              <img src="./assets/icons/instaOrange.svg" alt="" />
+            </a>
+            <a href="" class="social-item">
+              <img src="./assets/icons/wpOrange.svg" alt="" />
+            </a>
+            <a href="" class="social-item">
+              <img src="./assets/icons/ttOrange.svg" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/images/footerVector.svg"
+        alt=""
+        class="footerDecoration"
+      />
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>
+    <script src="./assets/swiper/swiper.js"></script>
+    <script src="./assets/js/index.js"></script>
+  </body>
+</html>
